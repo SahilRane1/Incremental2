@@ -3,6 +3,7 @@ using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using dotnetapp.Models;
+using 
 
 namespace dotnetapp.Controllers
 {
@@ -30,6 +31,7 @@ namespace dotnetapp.Controllers
             return RedirectToAction("Index");
         }
         [Route("Index")]
+        [Authorize]
         public IActionResult Index(){
             
             var data=context.Players.ToList();
