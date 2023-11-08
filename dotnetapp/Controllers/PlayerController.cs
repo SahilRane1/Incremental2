@@ -14,6 +14,19 @@ namespace dotnetapp.Controllers
         {
             context = _context;
         }
+        public IActionResult Create(){
+            return  View();
+        }
+        [HttpPost]
+        public IActionResult Create(Player p){
+            Player player=new Player();
+            player.Name=p.Name;
+            player.Category=p.Category;
+            player.BiddingAmount=p.BiddingAmount;
+            context.Players.Add(player);
+            context.SaveChanges();
+            return RedirectToAction("Index");
+        }
         public IActionResult Index(){
             
             var data=context.Players.ToList();
@@ -39,6 +52,7 @@ namespace dotnetapp.Controllers
             }
             return View();
         }
+        [HttpGet]
         public IActionResult Edit(){
             return View();
         }
@@ -55,11 +69,11 @@ namespace dotnetapp.Controllers
             }
             return View();
         }
-        public IActionResult Delete(){
+        public IActionResult Delete(int id){
             return View();
         }
         [HttpPost]
-        public IActionResult Delete(int id){
+        public IActionResult DeleteConfirmed(int id){
             var data=context.Players.Find(id);
             context.Players.Remove(data);
             return RedirectToAction("Index");
