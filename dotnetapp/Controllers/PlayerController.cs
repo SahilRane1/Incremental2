@@ -16,9 +16,11 @@ namespace dotnetapp.Controllers
         {
             context = _context;
         }
+        [Route("create")]
         public IActionResult Create(){
             return  View();
         }
+        
         [HttpPost]
         public IActionResult Create(Player p){
             Player player=new Player();
@@ -29,8 +31,7 @@ namespace dotnetapp.Controllers
             context.SaveChanges();
             return RedirectToAction("Index");
         }
-        [Route("Index")]
-        [Authorize]
+        [Route("")]
         public IActionResult Index(){
             
             var data=context.Players.ToList();
