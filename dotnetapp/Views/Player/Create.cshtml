@@ -1,12 +1,30 @@
-@model Player 
+@* @model Player 
 
 <h2>Creating Players..</h2>
 @using  (Html.BeginForm())
 {
     <table>
         <thead>
-            <th>@Html.DisplayNameFor(p=>p. Name)</th>
-            <th>@Html.EditorFor()</th>
+            <div>
+                <th>@Html.DisplayNameFor(p=>p.Name)</th>
+                <th>@Html.EditorFor(p=>p.Name)</th>
+                <th>@Html.ValidationMessageFor(p=>p.Name)</th>
+            </div>
+               <div>
+                <th>@Html.DisplayNameFor(p=>p.Category)</th>
+                <th>@Html.EditorFor(p=>p.Category/th>
+                <th>@Html.ValidationMessageFor(p=>p.Category)</th>
+            </div>
+            <div>
+                <th>@Html.DisplayNameFor(p=>p.Age)</th>
+                <th>@Html.EditorFor(p=>p.Age)</th>
+                <th>@Html.ValidationMessageFor(p=>p.Age)</th>
+            </div>
+            <div>
+                <th>@Html.DisplayNameFor(p=>p.BiddingAmount)</th>
+                <th>@Html.EditorFor(p=>p.BiddingAmount)</th>
+                <th>@Html.ValidationMessageFor(p=>p.BiddingAmount)</th>
+            </div>
         </thead>
     </table>
-}
+} *@
