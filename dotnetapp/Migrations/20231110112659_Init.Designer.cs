@@ -12,8 +12,8 @@ using dotnetapp.Models;
 namespace dotnetapp.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20231110104515_sahil migrations")]
-    partial class sahilmigrations
+    [Migration("20231110112659_Init")]
+    partial class Init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
