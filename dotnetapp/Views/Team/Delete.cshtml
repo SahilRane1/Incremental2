@@ -1,1 +1,8 @@
-@model Player
+@model Team
+<h2>Delete Team</h2>
+<p>@Html.DisplayNameFor(p=>p.TeamId) : @Html.DisplayFor(p=>p.TeamId)</p>
+<p>@Html.DisplayNameFor(p=>p.TeamName) : @Html.DisplayFor(p=>p.TeamName)</p>
+
+@using (Html.BeginForm()){
+    <input type="submit" value="Delete">
+}
