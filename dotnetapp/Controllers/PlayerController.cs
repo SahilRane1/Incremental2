@@ -24,13 +24,13 @@ namespace dotnetapp.Controllers
         
         [HttpPost]
         public IActionResult Create(Player p){
-            if(ModelState.IsValid){
+            // if(ModelState.IsValid){
             
                 context.Players.Add(p);
                 context.SaveChanges();
                 return RedirectToAction("Index");
-            }
-            return View();
+            // }
+            // return View();
         }
         // [Route("")]
         public IActionResult Index(){
