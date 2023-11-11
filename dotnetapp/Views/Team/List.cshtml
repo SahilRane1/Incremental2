@@ -1,0 +1,21 @@
+@model IEnumerable<Team>
+<h2>List Of Teams</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Team Id</th>
+            <th>Team Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>item.TeamId</td>
+                <td>item.TeamName</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@Html.ActionLink("Add Team","Add");

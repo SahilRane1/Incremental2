@@ -18439,6 +18439,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/home/coder/project/workspace/dotnetapp/Views/Team/List.cshtml",
+      "TargetPath": "Views\\Team\\List.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/home/coder/project/workspace/dotnetapp/Views/Player/Create.cshtml",
       "TargetPath": "Views\\Player\\Create.cshtml",
       "FileKind": "mvc"
