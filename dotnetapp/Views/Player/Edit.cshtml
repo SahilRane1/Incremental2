@@ -1,27 +1,29 @@
-@* @model Player 
-<h2>Edit Information</h2>
-<form method="post">
-    
-</form> *@
 @model Player
  
-@using(Html.BeginForm("DeleteConfirmed", "Player")){
-    @Html.DisplayNameFor(m=>m.Name)
-    <br>
-    @Html.EditorFor(m=>m.Name)
-    <br><br>
-    @Html.DisplayNameFor(m=>m.Category)
-    <br>
-    @Html.EditorFor(m=>m.Category)
-    <br><br>
-    @Html.DisplayNameFor(m=>m.BiddingAmount)
-    <br>
-    @Html.EditorFor(m=>m.BiddingAmount)
-    <br><br>
-    @Html.DisplayNameFor(m=>m.TeamId)
-    <br>
-    @Html.EditorFor(m=>m.TeamId)
-    <br><br>
+<h2>Edit Players</h2>
  
-   <input type="submit" value="Complete the edit" class = "btn btn-primary">
+@using (Html.BeginForm())
+{
+    @Html.DisplayNameFor(p=>p.Name)
+    <br>
+    @Html.EditorFor(p=>p.Name)
+    <br>
+    @Html.DisplayNameFor(p=>p.Age)
+    <br>
+    @Html.EditorFor(p=>p.Age)
+    <br>
+    @Html.DisplayNameFor(p=>p.Category)
+    <br>
+    @Html.EditorFor(p=>p.Category)
+    <br>
+    @Html.DisplayNameFor(p=>p.TeamId)
+    <br>
+    @Html.EditorFor(p=>p.TeamId)
+    <br>
+    @Html.DisplayNameFor(p=>p.BiddingAmount)
+    <br>
+    @Html.EditorFor(p=>p.BiddingAmount)
+    <br>
+ 
+    <input type="submit" value="edit save">
 }

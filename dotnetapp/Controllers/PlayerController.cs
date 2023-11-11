@@ -38,18 +38,17 @@ namespace dotnetapp.Controllers
             var data=context.Players.ToList();
             return View(data);
         }
-        public IActionResult Find(int id){
-            var data=context.Players.Find(id);
-            return View(data);
-        }
+        
         
       
         public IActionResult Edit(int id){
-            return View();
+            var data=context.Players.Find(id);
+            return View(data);
         }
         [HttpPost]
         public IActionResult Edit(Player p,int id){
-            if(ModelState.IsValid){
+           // if(ModelState.IsValid)
+           {
                 Player pl=context.Players.Find(id);
                 pl.Name=p.Name;
                 pl.Category=p.Category;
@@ -58,7 +57,7 @@ namespace dotnetapp.Controllers
                 context.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View();
+           // return View();
         }
         public IActionResult Delete(int id){
             return View();
