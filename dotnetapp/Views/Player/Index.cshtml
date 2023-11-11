@@ -4,15 +4,15 @@
 <table>
     <thead>
         <tr>
-            <th>Id</th>
-            <th>Name</th>
-            <th>Age</th>
-            <th>Category</th>
-            <th>Bidding Amount</th>
+            <th>Id </th>
+            <th> Name </th>
+            <th> Age </th>
+            <th> Category </th>
+            <th> Bidding Amount </th>
         </tr>
     </thead>
     <tbody>
-        @foreach (var item in Model)
+        @foreach (var item in @Model)
         {
             <tr>
                 <td>@item.Id</td>
@@ -28,4 +28,4 @@
     </tbody>
 </table>
  
-@Html.ActionLink("Add Player","Add");
+@Html.ActionLink("Add Player","Create");
