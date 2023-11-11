@@ -24,9 +24,7 @@ namespace dotnetapp.Controllers
        
         public IActionResult Add()
         {
-           
             return View();
- 
         }
         [HttpPost]
  
@@ -34,7 +32,7 @@ namespace dotnetapp.Controllers
         {
             context.Teams.Add(t);
             context.SaveChanges();
-            return RedirectToAction();
+            return RedirectToAction("List");
         }
  
  
