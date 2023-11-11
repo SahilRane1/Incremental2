@@ -18,19 +18,19 @@ namespace dotnetapp.Controllers
         }
         [Route("create")]
         public IActionResult Create(){
-            
+
             return  View();
         }
         
         [HttpPost]
         public IActionResult Create(Player p){
-            Player player=new Player();
-            player.Name=p.Name;
-            player.Category=p.Category;
-            player.BiddingAmount=p.BiddingAmount;
-            context.Players.Add(player);
-            context.SaveChanges();
-            return RedirectToAction("Index");
+            if(ModelState.IsValid){
+            
+                context.Players.Add(p);
+                context.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View();
         }
         [Route("")]
         public IActionResult Index(){
@@ -42,23 +42,8 @@ namespace dotnetapp.Controllers
             var data=context.Players.Find(id);
             return View(data);
         }
-        public IActionResult Add(){
-            return View();
-        }
-        [HttpPost]
-        public IActionResult Add(Player p){
-            if(ModelState.IsValid){
-                Player pl=new Player();
-                pl.Name=p.Name;
-                pl.Category=p.Category;
-                pl.BiddingAmount=p.BiddingAmount;
-                context.Players.Add(pl);
-                context.SaveChanges();
-                return RedirectToAction("Index");
-            }
-            return View();
-        }
-        [HttpGet]
+        
+      
         public IActionResult Edit(int id){
             return View();
         }
