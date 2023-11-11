@@ -10,6 +10,8 @@ namespace dotnetapp.Models
         public int Age{get;set;}
         public string Category{get;set;}
         [Range(1,int.MaxValue,ErrorMessage="Bidding amount must be greater than 0.")]
+        [ForeignKey("Team")]
+        public int TeamId{get;set;}
         public decimal BiddingAmount{get;set;}
         public Team Team{get;set;}
     }
