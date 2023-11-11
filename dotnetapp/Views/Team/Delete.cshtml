@@ -1,8 +1,11 @@
 @model Team
 <h2>Delete Team</h2>
-<p>@Html.DisplayNameFor(p=>p.TeamId) : @Html.DisplayFor(p=>p.TeamId)</p>
-<p>@Html.DisplayNameFor(p=>p.TeamName) : @Html.DisplayFor(p=>p.TeamName)</p>
+
+@* <p>@Html.DisplayNameFor(p=>p.TeamName) &nbsp;&nbsp;&nbsp; @Html.EditorFor(p=>p.TeamName)</p> *@
 
 @using (Html.BeginForm()){
-    <input type="submit" value="Delete">
+    <p>@Html.DisplayNameFor(p=>p.TeamId) &nbsp;&nbsp;&nbsp;
+        @Html.DisplayFor(p=>p.TeamId)  &nbsp;&nbsp;&nbsp; 
+        @Html.EditorFor(p=>p.TeamId)</p>
+    <input type="submit" value="Delete" class="btn-btn-danger"/>
 }
