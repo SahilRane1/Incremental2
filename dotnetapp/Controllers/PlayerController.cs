@@ -46,14 +46,13 @@ namespace dotnetapp.Controllers
             return View(data);
         }
         [HttpPost]
-        public IActionResult Edit(Player p,int id){
+        public IActionResult Edit(Player p){
            // if(ModelState.IsValid)
            {
-                Player pl=context.Players.Find(id);
+                Player pl=context.Players.Find(p.Id);
                 pl.Name=p.Name;
                 pl.Category=p.Category;
                 pl.BiddingAmount=p.BiddingAmount;
-                context.Players.Add(pl);
                 context.SaveChanges();
                 return RedirectToAction("Index");
             }
