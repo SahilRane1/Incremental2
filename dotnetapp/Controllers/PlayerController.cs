@@ -49,12 +49,14 @@ namespace dotnetapp.Controllers
         public IActionResult Edit(Player p){
            // if(ModelState.IsValid)
            {
+                
                 Player pl=context.Players.Find(p.Id);
                 pl.Name=p.Name;
                 pl.Age=p.Age;
                 pl.Category=p.Category;
                 pl.BiddingAmount=p.BiddingAmount;
                 context.SaveChanges();
+                               
                 return RedirectToAction("Index");
             }
            // return View();
