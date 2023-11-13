@@ -1,9 +1,6 @@
 @model Player
 <h1>Deleting Player</h1>
 @using (Html.BeginForm()){
-<p>@Html.DisplayNameFor(p=>p.Name) : @Html.EditorFor(p=>p.Name)</p>
-<p>@Html.DisplayNameFor(p=>p.Age) : @Html.EditorFor(p=>p.Age)</p>
-<p>@Html.DisplayNameFor(p=>p.Category) : @Html.EditorFor(p=>p.Category)</p>
-<p>@Html.DisplayNameFor(p=>p.BiddingAmount) : @Html.EditorFor(p=>p.BiddingAmount)</p>
+<p>@Html.DisplayNameFor(p=>p.Id) : @Html.EditorFor(p=>p.Id)</p>
     <input type='submit' value='Delete'>
 }

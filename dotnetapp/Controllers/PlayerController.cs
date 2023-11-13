@@ -51,6 +51,7 @@ namespace dotnetapp.Controllers
            {
                 Player pl=context.Players.Find(p.Id);
                 pl.Name=p.Name;
+                pl.Age=p.Age;
                 pl.Category=p.Category;
                 pl.BiddingAmount=p.BiddingAmount;
                 context.SaveChanges();
@@ -58,11 +59,18 @@ namespace dotnetapp.Controllers
             }
            // return View();
         }
-        public IActionResult Delete(int id){
+        public IActionResult Delete(){
             return View();
         }
         [HttpPost]
-        public IActionResult DeleteConfirmed(int id){
+        public IActionResult Delete(int id){
+            var data=context.Players.Find(id);
+            context.Players.Remove(data);
+            context.SaveChanges();
+            return RedirectToAction("Index");
+        }
+        [HttpPost]
+         public IActionResult DeleteConfirmed(int id){
             var data=context.Players.Find(id);
             context.Players.Remove(data);
             context.SaveChanges();
