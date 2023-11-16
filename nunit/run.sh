@@ -14,7 +14,7 @@ then
         cp -r /home/coder/project/workspace/nunit/test/dotnetapp.sln /home/coder/project/workspace/dotnetapp/;
         cd /home/coder/project/workspace/dotnetapp || exit;
         dotnet clean;
-        dotnet test;
+        dotnet build && dotnet test -l "console;verbosity=normal";
     else
         echo "Week2_day5_Player_ClassExists FAILED";
         echo "Week2_Day5_Player_Properties_Id_ReturnExpectedDataTypes_int FAILED";
