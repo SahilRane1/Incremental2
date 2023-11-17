@@ -61,12 +61,12 @@ namespace dotnetapp.Controllers
             }
            // return View();
         }
-        public IActionResult Delete(){
+        public IActionResult Delete(int id){
             return View();
         }
         [HttpPost]
-        public IActionResult Delete(int id){
-            var data=context.Players.Find(id);
+        public IActionResult Delete(Player p){
+            var data=context.Players.Find(p.Id);
             context.Players.Remove(data);
             context.SaveChanges();
             return RedirectToAction("Index");
